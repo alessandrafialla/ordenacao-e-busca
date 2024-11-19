@@ -3,61 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Horizontal</title>
-    <style>
-        /* Estilo geral */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #333; /* Fundo escuro para o cabeçalho */
-            padding: 10px 0;
-        }
-
-        .nav_header {
-            display: flex;
-            justify-content: center; /* Centraliza o menu horizontalmente */
-        }
-
-        .nav-list {
-            list-style: none; /* Remove os marcadores padrão da lista */
-            display: flex; /* Faz os itens ficarem na horizontal */
-            gap: 20px; /* Espaço entre os itens */
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-list li {
-            margin: 0;
-        }
-
-        .nav-list a {
-            text-decoration: none; /* Remove o sublinhado dos links */
-            color: white; /* Cor do texto dos links */
-            font-weight: bold;
-            padding: 10px 15px; /* Espaçamento interno dos links */
-            border-radius: 5px; /* Bordas arredondadas */
-            transition: background-color 0.3s;
-        }
-
-        .nav-list a:hover {
-            background-color: #575757; /* Cor de fundo ao passar o mouse */
-        }
-    </style>
+    <title>Minha Página</title>
+    <!-- Link para o CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="highlander context">
-    <header>
-        <nav class="nav_header">
-            <ul class="nav-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="relatorio.html">Relatório</a></li>
-                <li><a href="codigos.html">Código Fonte</a></li>                
-                <li><a href="testes.html">Log de Testes</a></li>                
-            </ul>
-        </nav>   
-    </header>
+<body>
+    <!-- Local onde a barra será carregada -->
+    <div id="navbar"></div>
+
+    <script>
+        // Carrega o conteúdo do arquivo navbar.html
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch('navbar.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Erro ao carregar o arquivo navbar.html');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+                })
+                .catch(error => console.error('Erro:', error));
+        });
+    </script>
+
+    <main>
+        <h1>Bem-vindo à minha página!</h1>
+        <p>Conteúdo da página.</p>
+    </main>
 </body>
 </html>

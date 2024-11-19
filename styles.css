@@ -1,0 +1,43 @@
+/* styles.css */
+
+/* Estilo geral */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333; /* Fundo escuro para o cabeçalho */
+    padding: 10px 0;
+}
+
+.nav_header {
+    display: flex;
+    justify-content: center; /* Centraliza o menu horizontalmente */
+}
+
+.nav-list {
+    list-style: none; /* Remove os marcadores padrão da lista */
+    display: flex; /* Faz os itens ficarem na horizontal */
+    gap: 20px; /* Espaço entre os itens */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li {
+    margin: 0;
+}
+
+.nav-list a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: rgb(137, 200, 236); /* Cor do texto dos links */
+    font-weight: bold;
+    padding: 10px 15px; /* Espaçamento interno dos links */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s;
+}
+
+.nav-list a:hover {
+    background-color: #575757; /* Cor de fundo ao passar o mouse */
+}

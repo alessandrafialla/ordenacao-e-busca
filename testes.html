@@ -4,9 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logs de Teste</title>
-    <h3>Inserir aqui os codigos</h3>
+    
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="navbar"></div>
     
+    <h3>Inserir aqui os logs de teste</h3>
+    <script>
+        // Carrega a barra de navegação de navbar.html
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch('navbar.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Erro ao carregar navbar.html');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+                })
+                .catch(error => console.error('Erro ao carregar a navbar:', error));
+        });
+    </script>
 </body>
 </html>
