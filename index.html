@@ -1,36 +1,76 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Página</title>
-    <!-- Link para o CSS -->
+    <title>Trabalho Prático - Alessandra Fialla</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Local onde a barra será carregada -->
     <div id="navbar"></div>
-
+    
     <script>
-        // Carrega o conteúdo do arquivo navbar.html
+        // Carrega a barra de navegação de navbar.html
         document.addEventListener("DOMContentLoaded", () => {
             fetch('navbar.html')
                 .then(response => {
                     if (!response.ok) {
-                        throw new Error('Erro ao carregar o arquivo navbar.html');
+                        throw new Error('Erro ao carregar navbar.html');
                     }
                     return response.text();
                 })
                 .then(data => {
                     document.getElementById('navbar').innerHTML = data;
                 })
-                .catch(error => console.error('Erro:', error));
+                .catch(error => console.error('Erro ao carregar a navbar:', error));
         });
+
     </script>
 
     <main>
-        <h1>Bem-vindo à minha página!</h1>
-        <p>Conteúdo da página.</p>
+        <div class ="titulo1">
+        <h4> Trabalho Prático - Ordenação e Busca </h4>
+        </div>
+        
+        <div class="texto-principal">
+        <p>Trabalho desenvolvido para a disciplina de <b>Algoritmos II</b>,<br>
+            ministrada pelo professor Prof. Elias P. Duarte Jr. <br>
+           <b>Autor:</b> Alessandra Fialla <br>
+           <b>GRR:</b> 20234444
+        </p>
+        </div>
+
+        <div class="relatorio">
+            <h3>Relatório</h3>
+            <p>O objetivo do trabalho era implementar e comparar algoritmos de ordenação e busca. <br>
+                Dessa forma, foram implementados os seguintes algoritmos: <br> </p>
+                <ul>
+                    <li>Busca Sequencial</li>
+                    <li>Busca Binária</li>
+                    <li>Insertion Sort</li>
+                    <li>Shell Sort</li>
+                    <li>Quick Sort</li>
+                </ul>
+            <p> Tanto Shell Sort quanto o Quick Sort tiveram 2 variações implementadas. </p>
+            <p> As variações do Shell consistem em duas formas de espaçamento, uma vez usando a sequência x e na segunda
+                um espaçamento sequencial de potência de 2. </p> 
+            <p> Já no Quick Sort, a variação foi no pivô, sendo ele na primeira posição ou na última. </p>
+            <p>  O objetivo dessas variações foi verificar quais diferenças na execução isso pode ocasionar em
+                relação a quantidade de comparações e de trocas.
+                
+            <p>  O fluxo de execução do código para permitir uma simulação mais livre, se deu através do uso de um 
+                 "Menu" de opções. Sendo possivel, através dele escolher quais dos algoritmos quer executar e gerar estatísticas.</p>
+                
+            <p>     O menu permite que um vetor unico e aleatorio seja criado e impresso. E sobre ele é possivel realizar buscas ou ordenações.
+                 Escolhendo a opção de busca, é possível ainda definir se deseja que o elemento buscado seja 
+                 aleatorio ou um específico. Se o segundo, eh necessario digita-lo.</p>
+
+
+            </p>
+        </div>
+
+   
     </main>
+    
 </body>
 </html>
