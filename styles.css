@@ -12,6 +12,45 @@ header {
     padding: 10px 0;
 }
 
+.texto-principal {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    text-align: center;
+    background-color: #f9feff;
+    padding: 20px 0;         /* Adiciona um espaçamento vertical para o cabeçalho */
+    margin-bottom: 20px;     /* Adiciona espaço abaixo do cabeçalho */
+    font-size: 16px;         /* Ajusta o tamanho da fonte */
+    border-bottom: 2px solid #ccc; /* Adiciona uma borda para separar o cabeçalho do conteúdo */
+}
+
+.titulo1 {
+    display: flex;
+    font-weight: bold;
+    justify-content: center; /* Centraliza horizontalmente */
+    text-align: center;
+    background-color: #b6cccf;
+    }
+
+    /* Estilo para a seção do relatório */
+.relatorio {
+    margin: 30px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+}
+
+.relatorio ul {
+    margin-left: 20px;
+    list-style-type: disc;
+}
+
+.relatorio p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
 .nav_header {
     display: flex;
     justify-content: center; /* Centraliza o menu horizontalmente */
