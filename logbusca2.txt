@@ -1,0 +1,18 @@
+---------------- MENU ----------------
+1 - Criar vetor 
+2 - Imprimir Vetor 
+3 - Ordenar vetor 
+4 - Buscar elemento 
+5 - Executar testes 
+6 - Sair
+Digite a opção desejada: 4
+Vetor ainda nao inicializado, nao eh possivel buscar elemento.
+---------------- MENU ----------------
+1 - Criar vetor 
+2 - Imprimir Vetor 
+3 - Ordenar vetor 
+4 - Buscar elemento 
+5 - Executar testes 
+6 - Sair
+Digite a opção desejada: 6
+Encerrando Programa...

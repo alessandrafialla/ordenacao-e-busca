@@ -10,7 +10,6 @@
 <body>
     <div id="navbar"></div>
     
-    <h3>Inserir aqui os logs de teste</h3>
     <script>
         // Carrega a barra de navegação de navbar.html
         document.addEventListener("DOMContentLoaded", () => {
@@ -27,5 +26,25 @@
                 .catch(error => console.error('Erro ao carregar a navbar:', error));
         });
     </script>
+    <main>
+        <div class="relatorio">
+            <h3> Testes com as funcoes de busca:<br></h3>
+            <p>A primeira situação de teste é a busca em vetor aleatorio com os algoritmos de <em>Busca Sequencial</em> e <em>Busca Binária</em>.</p>
+            <p>Nesse primeiro teste um valor aleatorio foi buscado com os dois algoritmos, sendo que quando na opcao de procurar por valor especifico, o valor aleatorio do teste anterios foi digitado.
+                <br> Pode ser visto em:</p>
+                <li><a href="logbusca1.txt" target="_blank">Teste de Busca 1</a></li>
+
+            <p> O proximo teste consiste em tentar buscar elemento antes de inicializar o vetor.</p>
+                Pode ser visto em:</p>
+                <li><a href="logbusca2.txt" target="_blank">Teste de Busca 2</a></li>
+
+                <h3> Testes de Ordenacao:<br></h3>
+            <p> Neste primeiro teste de ordenação, todos os algoritmos foram testtos individualmente com vetores diferentes. O mesmo algoritmo em suas duas variações foi testato com o mesmo vetor,
+                 para avaliar se a mudança gera interferencia em relacao a comparacoes e trocas.</p>
+                 <li><a href="logordenacaoindividual.txt" target="_blank">Teste de Ordenação 1</a></li>
+                 <p><em>Para essa classe de algoritmos nao é necessario criar um vetor antes de solicitar a execução, uma vez que cria um novo vetor em cada categoria.</em></p>
+        </div>
+
+    </main>
 </body>
 </html>

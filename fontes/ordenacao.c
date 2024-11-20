@@ -76,6 +76,26 @@ void menuPrincipal()
 // Retorna o indice do elemento encontrado ou -1 se nao encontrado
 #define TAM 1024 // Define o tamanho do vetor sem contar a sentinela
 
+//pesquisa binaria
+int pesquisaBinaria(int vetor[], int chave, int *comp) {
+    int inicio = 1, fim = TAM, meio; // Começa de 1 por causa do sentinela
+
+    while (inicio <= fim) {
+        meio = (inicio + fim) / 2;  // Calcula o elemento do meio
+
+        (*comp)++;  // Conta a comparação
+        if (vetor[meio] == chave)
+            return meio;  // Achou o elemento
+        else if (vetor[meio] < chave)
+            inicio = meio + 1;  // Vai para a metade direita
+        else
+            fim = meio - 1;  // Vai para a metade esquerda
+    }
+    return 0;  // Retorna 0 se não encontrar, posicao do sentinela
+}
+
+
+
 // Realiza a busca sequencial interativa de um valor em um vetor
 // Retorna o índice do elemento encontrado ou -1 se não encontrado
 int buscaSequencial(int vetor[], int valor, int *comp)
@@ -83,7 +103,7 @@ int buscaSequencial(int vetor[], int valor, int *comp)
     int i;
 
     // Itera sobre o vetor a partir da posição 1 (sentinela está em vetor[0])
-    for (i = 1; i <= TAM; i++) // Vai até TAM, considerando a alocação TAM+1
+    for (i = 0; i < TAM; i++) // Vai até TAM, considerando a alocação TAM+1
     {
         (*comp)++;// Incrementa a comparação
         if (vetor[i] == valor) // Verifica se encontrou o valor
@@ -294,235 +314,3 @@ float desvio_padrao(int *v, int n);
 
 float media(int *v, int n);
 
-int main()
-{
-    int opcao = 0;
-    int tipoOrdenacao = 0;
-    int tipoBusca = 0;
-    int vetorCriado = 0; /* Flag para ver se vetor inicializado antes de realizar busca*/
-    int comp, troca, indice;
-
-    /*Cria vetor principal*/
-    int *v = malloc(sizeof(int) * (TAM + 1)); /* Aloca vetor principal*/
-
-    if (v == NULL){
-        printf("Não foi possivel criar vetor, erro de alocação\n");
-        return -1;
-    }
-
-    /* Cria vetor auxiliar para executar algoritmos com o mesmo vetor*/
-    int *vetAux = malloc((TAM + 1) * sizeof(int)); /* Cria vetor auxiliar incluindo o sentinela*/
-
-    if(vetAux == NULL){
-        printf("Não foi possivel criar vetor auxiliar, erro de alocação\n");
-        return -1;
-    }
-
-    srand(0); /* Inicializa a semente randomica*/
-
-    while (1) 
-    {
-        menuPrincipal(opcao); /* Define o fluxo de execução do programa*/
-        scanf("%d", &opcao);
-
-        switch (opcao)
-        {
-        case 1:
-                inicializaVetor(v);
-                vetorCriado = 1; /* flag de controle para checar se alocado*/
-                printf("Vetor criado e inicializado com valores de 0 ate 2048\n\n");
-    
-            break;
-
-        case 2:
-            if (vetorCriado == 0)
-                printf("Vetor ainda não inicializado, nao eh possivel imprimir\n");
-            else 
-                imprimeVetor(v);
-                
-            printf("\n");
-            break;
-        case 3:
-                printf("-----------------------------------\n");
-                printf("Escolha o método de ordenação:\n");
-                printf("1. Shell Sort\n");
-                printf("2. Quick Sort\n");
-                printf("3. Insertion Sort\n");
-                printf("4. Testar com todos os citados, apenas uma vez cada\n");
-                printf("Digite a opção desejada:");
-
-                scanf("%d", &tipoOrdenacao);
-                printf("\n");
-
-                /* Garantindo comp e troca como zero */
-                comp = 0, troca = 0;
-
-                if (tipoOrdenacao == 1)
-                {
-                    inicializaVetor(v);
-                    printf("Vetor de Teste: \n"); /* Imprime qual sera o vetor executado*/
-                    imprimeVetor(v);
-                    printf("\n");
-
-                    copiaVetor(v, vetAux); /* copia vetor inicializado para o aux*/
-
-                    shellSort(v, TAM, &comp, &troca);
-                    printf("\nShell Sort com espaçamento 1, 4, 13, 40, ... \n");
-                    printf("Numero de Comparações: %d.\n", comp);
-                    printf("Numero de Trocas: %d.\n", troca);
-                    printf("Vetor Ordenado: \n");
-                    imprimeVetor(v);
-                    printf("\n");
-
-                    comp = 0, troca = 0; /* Zera contadores para a segunda implementacao do shell*/
-                    copiaVetor(vetAux, v); /* Copia aux para o principal para ser usado no proximo*/
-
-                    shellSortPot2(v, TAM, &comp, &troca);
-                    printf("\nShell Sort em potencia de 2\n");
-                    printf("Numero de Comparações: %d.\n", comp);
-                    printf("Numero de Trocas: %d.\n", troca);
-                    printf("Vetor Ordenado: \n");
-                    imprimeVetor(v);
-                    printf("\n");
-                }
-
-                if (tipoOrdenacao == 2)
-                {   
-                    comp = 0, troca = 0; /* zerando contadores*/
-                    inicializaVetor(v); /* Subscreve o vetor com novos valores aleatorios*/
-                    copiaVetor(v, vetAux); /* Copia principal para aux*/
-
-                    printf("Vetor de Teste: \n"); /* Imprime qual sera o vetor executado*/
-                    imprimeVetor(v);
-                    printf("\n");
-
-                    quickSortPivoFim(v, 1, TAM, &comp, &troca);
-                    printf("\nQuick Sort com pivo na ultima posição\n");
-                    printf("Numero de Comparações: %d.\n", comp);
-                    printf("Numero de Trocas: %d.\n", troca);
-                    printf("Vetor Ordenado: \n");
-                    imprimeVetor(v);
-                    printf("\n");
-
-                    comp = 0, troca = 0; /* zerando contadores*/
-                    copiaVetor(vetAux, v); /* Copia aux para principal para testar com mesmo vetor*/
-                    
-                    quickSortPivoInicio(v, 1, TAM, &comp, &troca);
-                    printf("\nQuick Sort com pivo na Primeira Posicao\n");
-                    printf("Numero de Comparações: %d.\n", comp);
-                    printf("Numero de Trocas: %d.\n", troca);
-                    printf("Vetor Ordenado: \n");
-                    imprimeVetor(v);
-                    printf("\n");
-
-                }
-
-                if(tipoOrdenacao == 3){
-                    comp = 0, troca = 0;
-                    inicializaVetor(v); /* Para garantir que nao esta com versao 
-                    ordenada de acao anterior*/
-
-                    printf("Vetor de Teste: \n"); /* Imprime qual sera o vetor executado*/
-                    imprimeVetor(v);
-                    printf("\n");
-
-                    insertionSort(v, TAM, &comp, &troca);
-                    printf("Insertion Sort\n");
-                    printf("Numero de Comparações: %d.\n", comp);
-                    printf("Numero de Trocas: %d.\n", troca);
-                    printf("Vetor Ordenado: \n");
-                    imprimeVetor(v);
-                    printf("\n");
-                }
-                
-                if(tipoOrdenacao == 4){
-                    
-                    printf("Ordenando o mesmo vetor com todos os algoritmos...\n\n");
-                    inicializaVetor(v); /* Subescreve o vetor com novos valores*/
-                    copiaVetor(v, vetAux); /* Copia o vetor criado para o vetor auxiliar
-                    para ser utilizado por todos os algoritmos */
-
-                    comp = 0, troca = 0;
-                    printf("Shell Sort com espaçamento 1, 4, 13, 40,... \n");
-                    printf("Vetor Inicial: ");
-                    imprimeVetor(v);
-                    shellSort(v, TAM, &comp, &troca);
-                    printf("Numero de Comparações: %d.\n", comp);
-                    printf("Numero de Trocas: %d.\n", troca);
-                    printf("\n");
-
-                    comp = 0, troca = 0;
-                    copiaVetor(vetAux, v); /* Copia o vetor auxiliar para o principal para ser usado pelo prox */
-
-                    printf("\nShell Sort em potencia de 2\n");
-                    printf("Vetor Inicial: ");
-                    imprimeVetor(v);
-                    shellSortPot2(v, TAM, &comp, &troca);
-                    printf("Numero de Comparações: %d.\n", comp);
-                    printf("Numero de Trocas: %d.\n", troca);
-                    printf("\n");
-
-                    comp = 0, troca = 0;
-                    copiaVetor(vetAux, v); /* Copia o vetor auxiliar para o principal para ser usado pelo prox */
-
-                    quickSortPivoFim(v, 1, TAM, &comp, &troca);
-                    printf("\nQuick Sort com pivo na ultima posição\n");
-                    printf("Numero de Comparações: %d.\n", comp);
-                    printf("Numero de Trocas: %d.\n", troca);
-                    printf("\n");
-
-                    comp = 0, troca = 0; /* zerando contadores*/
-                    copiaVetor(vetAux, v); /* Copia o vetor auxiliar para o principal para ser usado pelo prox */
-
-                    quickSortPivoInicio(v, 1, TAM, &comp, &troca);
-                    printf("\nQuick Sort com pivo na Primeira Posicao\n");
-                    printf("Numero de Comparações: %d.\n", comp);
-                    printf("Numero de Trocas: %d.\n", troca);
-                    printf("\n");
-
-                    comp = 0, troca = 0; /* zerando contadores*/
-                    copiaVetor(vetAux, v); /* Copia o vetor auxiliar para o principal para ser usado pelo prox */
-
-                    insertionSort(v, TAM, &comp, &troca);
-                    printf("Insertion Sort\n");
-                    printf("Numero de Comparações: %d.\n", comp);
-                    printf("Numero de Trocas: %d.\n", troca);
-                    printf("\n");
-
-                }
-                
-            break;
-        case 4:
-            printf("-----------------------------------\n");
-                printf("Escolha tipo de busca:\n");
-                printf("1. Busca por valor aleatório\n");
-                printf("2. Busca por valor especifico\n");
-                printf("Digite sua escolha: ");
-
-                scanf("%d", &tipoBusca);
-
-                if(tipoBusca == 1){
-                    comp = 0;
-                    int chave = aleat(0,2048);
-                    printf("Buscando valor aleatório: %d\n", chave);
-                    indice = buscaSequencial(v,chave, &comp);
-
-                    if(indice == 0){
-                        printf("Valor não encontrado no vetor\n");
-                    }
-                    else {
-                        printf("Valor encontrado no indice %d do vetor\n", indice);
-
-                    }
-                    
-                }
-
-        case 6:
-            printf("Encerrando Programa...\n\n\n");
-            
-            free(v);
-            free(vetAux); /* eh alocado logo no inicio*/
-            exit(0);
-        }
-    }
-}

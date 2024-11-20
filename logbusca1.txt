@@ -1,0 +1,67 @@
+---------------- MENU ----------------
+1 - Criar vetor 
+2 - Imprimir Vetor 
+3 - Ordenar vetor 
+4 - Buscar elemento 
+5 - Executar testes 
+6 - Sair
+Digite a opção desejada: 1
+Vetor criado e inicializado com valores de 0 ate 2048
+
+---------------- MENU ----------------
+1 - Criar vetor 
+2 - Imprimir Vetor 
+3 - Ordenar vetor 
+4 - Buscar elemento 
+5 - Executar testes 
+6 - Sair
+Digite a opção desejada: 2
+1453 1324 615 931 8 ... 602 1722 1365 1988 1629 1299 
+
+---------------- MENU ----------------
+1 - Criar vetor 
+2 - Imprimir Vetor 
+3 - Ordenar vetor 
+4 - Buscar elemento 
+5 - Executar testes 
+6 - Sair
+Digite a opção desejada: 4
+-----------------------------------
+Escolha tipo de busca:
+1. Busca por valor aleatório
+2. Busca por valor especifico
+Digite sua escolha: 1
+Buscando valor aleatório: 945
+Pesquisa Sequencial
+Valor encontrado no indice 219 do vetor com 220 comparações
+Pesquisa Binaria
+Valor encontrado no indice 466 do vetor com 9 comparações
+---------------- MENU ----------------
+1 - Criar vetor 
+2 - Imprimir Vetor 
+3 - Ordenar vetor 
+4 - Buscar elemento 
+5 - Executar testes 
+6 - Sair
+Digite a opção desejada: 4
+-----------------------------------
+Escolha tipo de busca:
+1. Busca por valor aleatório
+2. Busca por valor especifico
+Digite sua escolha: 2
+Digite o valor a ser procurado: 
+945
+Pesquisa Sequencial
+Valor encontrado no indice 219 do vetor com 220 comparações
+5 7 8 13 15 ... 2035 2035 2038 2041 2045 2047 
+Pesquisa Binaria
+Valor encontrado no indice 466 do vetor com 9 comparações
+---------------- MENU ----------------
+1 - Criar vetor 
+2 - Imprimir Vetor 
+3 - Ordenar vetor 
+4 - Buscar elemento 
+5 - Executar testes 
+6 - Sair
+Digite a opção desejada: 6
+Encerrando Programa...

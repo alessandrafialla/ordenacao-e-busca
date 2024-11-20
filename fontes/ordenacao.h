@@ -1,20 +1,51 @@
- 
- 
- 
- /* Considere um vetor de inteiros com 1024 posições. Preencha este vetor com números aleatórios entre 0 e 2048. Você deve usar recursos da linguagem de programação para gerar os números aleatórios. O programa deve permitir criar um novo vetor a qualquer momento. Deve ser possível imprimir na tela uma pequena parte deste vetor, de forma limpa e compacta.
 
-Ordene este vetor usando três algoritmos: ShellSort, QuickSort e um algoritmo quadrático da sua escolha. Use duas estratégias de escolha do pivô no QuickSort. Use dois espaçamentos distintos no ShellSort. Seu programa deve contar quantas comparações e quantas permutações (trocas) de elementos cada método utiliza para ordenar o vetor.
+#ifndef ORDENACAO_H
+#define ORDENACAO_H
 
-Permita uma consulta a um elemento neste vetor. O elemento pode ser tanto entrado pelo usuário e também gerado aleatoriamente. Tanto a Pesquisa Sequencial como a Pesquisa Binária devem ser realizadas. A Pesquisa Sequencial deve ser realizada no vetor original não ordenado. O programa deve contar o número de comparações realizadas em cada pesquisa.
+#include <stdio.h>
+#include <stdlib.h>
 
-Uma opção do menu deve permitir a execução de ordenações e buscas (TODOS os algoritmos) 1000 vezes, calculando a média e o desvio padrão do número de comparações utilizadas em cada caso.
+// Definições de tamanho
+#define TAM 1024
+#define TAMTESTE 1000
 
-O objetivo do seu programa é comprovar na prática: qual o melhor dos métodos de ordenação? O QuickSort foi melhor ou pior que o ShellSort? Além disso deve demonstrar a eficiência dos demais algoritmos implementados.
+// Prototipação de funções
+int aleat(int min, int max);
 
-Execute testes exaustivos, mostrando que seu programa funciona nas mais diversas situações.*/
+/*Imprime as primeiras 5 e ultimas 6 posicoes do vetor*/
+void imprimeVetor(int *v);
 
-struct vetor{
-    float media;
-    float desvio;
-    int *v;
-};
+/*Inicializa vetor com valores aleatorios de 0 ate 2048*/
+void inicializaVetor(int *v);
+
+/*Copia todos os valores de vet1 para vet2*/
+void copiaVetor(int *vet1, int *vet2);
+
+/*Imprime as opcoes de acoes*/
+void menuPrincipal();
+
+/*Implementa os algoritmos de busca*/
+int buscaSequencial(int vetor[], int valor, int *comp);
+int pesquisaBinaria(int vetor[], int chave, int *comp);
+
+/*Variacao de implementacao do quicksort utilizando pivo no inicio do vetor*/
+void particionarInicio(int *v, int esq, int dir, int *pos_pivo, int *comp, int *trocas);
+void quickSortPivoInicio(int *v, int esq, int dir, int *comp, int *troca);
+
+/*Variacao de implementacao do quicksort utilizando pivo no final do vetor*/
+void particionarFim(int *v, int esq, int dir, int *pos_pivo, int *comp, int *trocas);
+void quickSortPivoFim(int *v, int esq, int dir, int *comp, int *trocas);
+
+/*Implementa o algoritmo Insertion Sort*/
+void insertionSort(int *v, int n, int *comp, int *troca);
+
+/*Variacao do Shell sort com gap em potencia de 2*/
+void shellSortPot2(int *v, int n, int *comp, int *troca);
+
+/*Variacao do Shell sort com gap em sequencia de Knuth*/
+void shellSort(int *v, int n, int *comp, int *troca);
+
+float desvio_padrao(int *v, int n);
+float media(int *v, int n);
+
+#endif // ORDENACAO_H

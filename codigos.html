@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="navbar"></div>
-    <h3>Inserir aqui os codigos</h3>
+    
     <script>
         // Carrega a barra de navegação de navbar.html
         document.addEventListener("DOMContentLoaded", () => {
@@ -26,6 +26,23 @@
                 .catch(error => console.error('Erro ao carregar a navbar:', error));
         });
     </script>
+    <main>
+        <div class= "relatorio">
+        <h3>Códigos Fonte</h3>
+        <p> O programa para executar as comparações entre os algoritmos foi desenvolvido utilizando a linguagem C.</p>
+        <p> O código pode ser vizualizado através dos arquivos abaixo, nesse contexto em arquivo .txt:</p>
+            <ul>
+                <li><a href="makefile.txt" target="_blank">Makefile</a></li>
+                <li><a href="ordenacao.h.txt" target="_blank">Arquivo de Header (.h)</a></li>
+                <li><a href="ordenacao.c.txt" target="_blank">Implementação de Funções (.c)</a></li>
+                <li><a href="main.c.txt" dtarget="_blank">Programa Principal (.c)</a></li>
+            </ul>
+        <p>Para testar a execução do programa é necessário baixar os arquivos acima citados em um computador
+             e remover a extensão .txt. </p>
+        <p>Em um terminal Linux inserir o comando <em>make</em> e em seguida
+              executar com <em> ./ordena</em></p>.
+            </div>
+    </main>
     
 </body>
 </html>

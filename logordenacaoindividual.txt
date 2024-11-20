@@ -1,0 +1,100 @@
+---------------- MENU ----------------
+1 - Criar vetor 
+2 - Imprimir Vetor 
+3 - Ordenar vetor 
+4 - Buscar elemento 
+5 - Executar testes 
+6 - Sair
+Digite a opção desejada: 3
+-----------------------------------
+Escolha o método de ordenação:
+1. Shell Sort
+2. Quick Sort
+3. Insertion Sort
+4. Testar com todos os citados, apenas uma vez cada
+Digite a opção desejada:1
+
+Vetor de Teste: 
+1453 1324 615 931 8 ... 602 1722 1365 1988 1629 1299 
+
+
+Shell Sort com espaçamento 1, 4, 13, 40, ... 
+Numero de Comparações: 8558.
+Numero de Trocas: 12034.
+Vetor Ordenado: 
+5 7 8 13 15 ... 2035 2035 2038 2041 2045 2047 
+
+
+Shell Sort em potencia de 2
+Numero de Comparações: 12340.
+Numero de Trocas: 16346.
+Vetor Ordenado: 
+5 7 8 13 15 ... 2035 2035 2038 2041 2045 2047 
+
+---------------- MENU ----------------
+1 - Criar vetor 
+2 - Imprimir Vetor 
+3 - Ordenar vetor 
+4 - Buscar elemento 
+5 - Executar testes 
+6 - Sair
+Digite a opção desejada: 3
+-----------------------------------
+Escolha o método de ordenação:
+1. Shell Sort
+2. Quick Sort
+3. Insertion Sort
+4. Testar com todos os citados, apenas uma vez cada
+Digite a opção desejada:2
+
+Vetor de Teste: 
+945 1227 380 34 1921 ... 595 1718 721 1982 825 235 
+
+
+Quick Sort com pivo na ultima posição
+Numero de Comparações: 11148.
+Numero de Trocas: 5850.
+Vetor Ordenado: 
+1 5 7 8 10 ... 2039 2039 2041 2042 2043 2045 
+
+
+Quick Sort com pivo na Primeira Posicao
+Numero de Comparações: 11851.
+Numero de Trocas: 1767.
+Vetor Ordenado: 
+1 5 7 8 10 ... 2039 2039 2041 2042 2043 2045 
+
+---------------- MENU ----------------
+1 - Criar vetor 
+2 - Imprimir Vetor 
+3 - Ordenar vetor 
+4 - Buscar elemento 
+5 - Executar testes 
+6 - Sair
+Digite a opção desejada: 3
+-----------------------------------
+Escolha o método de ordenação:
+1. Shell Sort
+2. Quick Sort
+3. Insertion Sort
+4. Testar com todos os citados, apenas uma vez cada
+Digite a opção desejada:3
+
+Vetor de Teste: 
+722 1080 1863 1847 632 ... 298 484 1242 928 470 397 
+
+Insertion Sort
+Numero de Comparações: 261102.
+Numero de Trocas: 1015.
+Vetor Ordenado: 
+0 0 1 6 7 ... 2014 2015 2020 2022 2024 2047 
+
+---------------- MENU ----------------
+1 - Criar vetor 
+2 - Imprimir Vetor 
+3 - Ordenar vetor 
+4 - Buscar elemento 
+5 - Executar testes 
+6 - Sair
+Digite a opção desejada: 6
+Encerrando Programa...
