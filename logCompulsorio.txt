@@ -1,0 +1,48 @@
+---------------- MENU ----------------
+1 - Criar vetor 
+2 - Imprimir Vetor 
+3 - Ordenar vetor 
+4 - Buscar elemento 
+5 - Executar testes 
+6 - Sair
+Digite a opção desejada: 5
+Executando testes compulsórios em todos os Algoritmos (1000 vezes cada).
+
+Testando Shell Sort..
+
+Shell Sort com sequencia de Knuth
+Valor médio de comparações: 4502.77 Desvio Padrão: 4513.31 
+
+Shell Sort com sequencia em Potencia de 2
+Valor médio de comparações: 8486.76 Desvio Padrão: 8652.95 
+
+Testando Quick Sort...
+
+Quick Sort com Pivo no Inicio:
+Valor médio de comparações: 6203.76 Desvio Padrão: 6218.05 
+
+Quick Sort com Pivo no Final:
+Valor médio de comparações: 5648.29 Desvio Padrão: 5666.05 
+
+Testando Insertion Sort...
+
+Insertion Sort
+Valor médio de comparações: 131074.88 Desvio Padrão: 131135.28 
+
+Testando Buscas...
+
+Busca Sequencial
+Valor médio de comparações: 407.58 Desvio Padrão: 466.25 
+
+Busca Binaria
+Valor médio de comparações: 4.74 Desvio Padrão: 4.81 
+
+---------------- MENU ----------------
+1 - Criar vetor 
+2 - Imprimir Vetor 
+3 - Ordenar vetor 
+4 - Buscar elemento 
+5 - Executar testes 
+6 - Sair
+Digite a opção desejada: 6
+Encerrando Programa...
